@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[6]:
 
 
 import streamlit as st
-import joblit
+import joblib
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
@@ -13,7 +13,7 @@ from wordcloud import WordCloud
 model = joblib.load("nb_model.joblib")
 
 #Streamlit app code
-st.titel("Chatgpt Tweets Sentiment Analysis App")
+st.title("Chatgpt Tweets Sentiment Analysis App")
 
 st.header("Enter the tweet here")
 
