@@ -1,32 +1,30 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[8]:
+# In[9]:
 
 
-get_ipython().system('pip install joblib')
 import streamlit as st
 import joblib
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
-#Load the saved model
+# Load the saved model
 model = joblib.load("nb_model.joblib")
 
-#Streamlit app code
+# Streamlit app code
 st.title("Chatgpt Tweets Sentiment Analysis App")
 
-st.header("Enter the tweet here")
-
-#Input text from the user
+st.header("Enter the tweet here:")
+# Input text from the user
 user_input = st.text_area("", height=100)
 
-#creat predict button
+# Create a predict button
 if st.button("Predict"):
-    #Preprocess the input text using the loded COuntorlizer
+    # Preprocess the input text using the loaded CountVectorizer
     text_dtm = model['vect'].transform([user_input])
-    
-    #Make Prediction
+
+    # Make predictions
     prediction = model['nb'].predict(text_dtm)
     
     st.header("Prediction")
