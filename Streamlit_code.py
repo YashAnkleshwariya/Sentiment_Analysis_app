@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[6]:
+# In[8]:
 
 
+get_ipython().system('pip install joblib')
 import streamlit as st
 import joblib
 import matplotlib.pyplot as plt
