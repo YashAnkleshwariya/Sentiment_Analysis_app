@@ -1,5 +1,5 @@
 streamlit
 wordcloud
 matplotlib
-joblib
+pickle
 scikit-learn
