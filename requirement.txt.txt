@@ -1,5 +1,0 @@
-streamlit
-wordcloud
-matplotlib
-joblib
-scikit-learn
