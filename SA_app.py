@@ -1,30 +1,33 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[9]:
+# In[1]:
 
 
 import streamlit as st
-import joblib
+import pickle
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
-# Load the saved model
-model = joblib.load("nb_model.joblib")
 
-# Streamlit app code
+# Load the saved model
+with open("nb_model.pkl", "rb") as file:
+    model = pickle.load(file)
+
+#Streamlit app code
 st.title("Chatgpt Tweets Sentiment Analysis App")
 
-st.header("Enter the tweet here:")
-# Input text from the user
+st.header("Enter the tweet here")
+
+#Input text from the user
 user_input = st.text_area("", height=100)
 
-# Create a predict button
+#creat predict button
 if st.button("Predict"):
-    # Preprocess the input text using the loaded CountVectorizer
+    #Preprocess the input text using the loded COuntorlizer
     text_dtm = model['vect'].transform([user_input])
-
-    # Make predictions
+    
+    #Make Prediction
     prediction = model['nb'].predict(text_dtm)
     
     st.header("Prediction")
@@ -50,4 +53,10 @@ if st.button("Predict"):
     plt.imshow(wc, interpolation='bilinear')
     plt.axis("off")
     st.pyplot(plt)
+
+
+# In[ ]:
+
+
+
 
