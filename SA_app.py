@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[6]:
+# In[1]:
 
 
 import streamlit as st
@@ -12,12 +12,12 @@ import joblib
 model = joblib.load("nb_model.joblib")
 
 #Streamlit app code
-st.title("Chatgpt Tweets Sentiment Analysis App")
+st.title("Sentiment Analysis App")
 
 st.header("Enter the tweet here")
 
 #Input text from the user
-user_input = st.text_area("Enter your tweet", height=100)
+user_input = st.text_area(" ", height=100)
 
 #creat predict button
 if st.button("Predict"):
