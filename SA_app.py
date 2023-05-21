@@ -12,9 +12,9 @@ import joblib
 model = joblib.load("nb_model.joblib")
 
 #Streamlit app code
-st.title("Sentiment Analysis App")
+st.title(" Chatgpt tweet Sentiment Analysis App")
 
-st.header("Enter the tweet here")
+st.header(" ")
 
 #Input text from the user
 user_input = st.text_area(" ", height=100)
